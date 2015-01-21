@@ -57,11 +57,10 @@
     self.mPlaybackView.backgroundColor = [UIColor blackColor];
     [self addSubview:self.mPlaybackView];
     
-    UIButton *button = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 100, 100)];
-    [button addTarget:self action:@selector(playOrPauseMedia:) forControlEvents:UIControlEventTouchUpInside];
-    [button setTitle:@"Play" forState:UIControlStateNormal];
-    self.playOrPauseButton = button;
-    [self.mPlaybackView addSubview:button];
+    self.playOrPauseButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 100, 100)];
+    [self.playOrPauseButton addTarget:self action:@selector(playOrPauseMedia:) forControlEvents:UIControlEventTouchUpInside];
+    [self.playOrPauseButton setTitle:@"Play" forState:UIControlStateNormal];
+    [self.mPlaybackView addSubview:self.playOrPauseButton];
     
     //set up image view
     self.imageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
@@ -69,10 +68,10 @@
     [self addSubview:self.imageView];
     
     //set up activity indicator
-    UIActivityIndicatorView *indicator = [[UIActivityIndicatorView alloc]initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
-    [indicator hidesWhenStopped];
-    self.activityIndicator = indicator;
-    [self addSubview:indicator];
+    self.activityIndicator = [[UIActivityIndicatorView alloc]initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
+    [self.activityIndicator hidesWhenStopped];
+    self.activityIndicator.frame = CGRectMake((self.frame.size.width - self.activityIndicator.frame.size.width)/2, (self.frame.size.height - self.activityIndicator.frame.size.height)/2, self.activityIndicator.frame.size.width, self.activityIndicator.frame.size.height);
+    [self addSubview:self.activityIndicator];
     
     //allowed extensios
     self.photoExtensionArray = [NSArray arrayWithObjects:@"jpg", @"JPG", @"jpeg", @"JPEG", @"png", @"PNG", nil];
@@ -133,7 +132,6 @@
              }
          });
      }];
-
 }
 
 - (void)setMediaWithFile:(NSString*)filePath
@@ -152,7 +150,6 @@
     [self.mPlaybackView setPlayer:self.avPlayer];
     self.imageView.hidden = YES;
     self.mPlaybackView.hidden = NO;
-    //[self.avPlayer play];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(playerItemDidReachEnd:) name:AVPlayerItemDidPlayToEndTimeNotification object:[self.avPlayer currentItem]];
 }
@@ -193,9 +190,7 @@
     NSLog(@"played item");
     [self.playOrPauseButton setTitle:@"Play" forState:UIControlStateNormal];
     [self.avPlayer seekToTime:kCMTimeZero];
-    //[self.avPlayer play];
 }
-
 
 - (IBAction)playOrPauseMedia:(id)sender
 {

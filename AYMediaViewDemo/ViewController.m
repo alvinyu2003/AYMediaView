@@ -22,9 +22,10 @@
     // Do any additional setup after loading the view, typically from a nib.
     
     NSURL *photoURL = [NSURL URLWithString:@"http://cdn.funnyisms.com/939bba9e-5172-4d7b-99c5-05e29c2d7045.jpg"];
-    NSURL *videoURL = [NSURL URLWithString:@"https://dl.dropboxusercontent.com/u/9804931/Smoke.mp4"];
+    NSURL *videoURL = [NSURL URLWithString:@"https://s3.amazonaws.com/alvinvideos/Hamburg.mp4"];
     
-    [self.ayMediaView setMediaWithURL:photoURL];
+    //[self.ayMediaView setMediaWithURL:photoURL];
+    [self.ayMediaView setMediaWithURL:videoURL];
 }
 
 - (void)didReceiveMemoryWarning {
