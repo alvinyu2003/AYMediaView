@@ -14,11 +14,10 @@
 @property (nonatomic, strong) AVPlayerDemoPlaybackView *mPlaybackView;
 @property (nonatomic, strong) AVPlayer *avPlayer;
 @property (nonatomic, strong) UIImageView *imageView;
-@property (nonatomic, strong) NSArray *photoExtensionArray;
-@property (nonatomic, strong) NSArray *videoExtensionArray;
 @property (nonatomic, strong) IBOutlet UIButton *playOrPauseButton;
 @property (nonatomic, strong) UIActivityIndicatorView *activityIndicator;
-
+@property (nonatomic, strong) NSArray *photoExtensionArray;
+@property (nonatomic, strong) NSArray *videoExtensionArray;
 @end
 
 @implementation AYMediaView
