@@ -16,7 +16,6 @@
 		1961C2111A6DA2B800E8BF0B /* AYMediaViewDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1961C2101A6DA2B800E8BF0B /* AYMediaViewDemoTests.m */; };
 		1961C21F1A6DD2BE00E8BF0B /* AYMediaView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1961C21E1A6DD2BE00E8BF0B /* AYMediaView.m */; };
 		1961C2221A6DD6D100E8BF0B /* AVPlayerDemoPlaybackView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1961C2211A6DD6D100E8BF0B /* AVPlayerDemoPlaybackView.m */; };
-		1961C2251A6DE20C00E8BF0B /* NSString+NSHash.m in Sources */ = {isa = PBXBuildFile; fileRef = 1961C2241A6DE20C00E8BF0B /* NSString+NSHash.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,8 +46,6 @@
 		1961C21E1A6DD2BE00E8BF0B /* AYMediaView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AYMediaView.m; sourceTree = "<group>"; };
 		1961C2201A6DD6D100E8BF0B /* AVPlayerDemoPlaybackView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVPlayerDemoPlaybackView.h; sourceTree = "<group>"; };
 		1961C2211A6DD6D100E8BF0B /* AVPlayerDemoPlaybackView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVPlayerDemoPlaybackView.m; sourceTree = "<group>"; };
-		1961C2231A6DE20C00E8BF0B /* NSString+NSHash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+NSHash.h"; sourceTree = "<group>"; };
-		1961C2241A6DE20C00E8BF0B /* NSString+NSHash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+NSHash.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,8 +93,6 @@
 				1961C1FC1A6DA2B800E8BF0B /* ViewController.m */,
 				1961C21D1A6DD2BE00E8BF0B /* AYMediaView.h */,
 				1961C21E1A6DD2BE00E8BF0B /* AYMediaView.m */,
-				1961C2231A6DE20C00E8BF0B /* NSString+NSHash.h */,
-				1961C2241A6DE20C00E8BF0B /* NSString+NSHash.m */,
 				1961C2201A6DD6D100E8BF0B /* AVPlayerDemoPlaybackView.h */,
 				1961C2211A6DD6D100E8BF0B /* AVPlayerDemoPlaybackView.m */,
 				1961C1FE1A6DA2B800E8BF0B /* Main.storyboard */,
@@ -236,7 +231,6 @@
 			files = (
 				1961C2221A6DD6D100E8BF0B /* AVPlayerDemoPlaybackView.m in Sources */,
 				1961C1FD1A6DA2B800E8BF0B /* ViewController.m in Sources */,
-				1961C2251A6DE20C00E8BF0B /* NSString+NSHash.m in Sources */,
 				1961C21F1A6DD2BE00E8BF0B /* AYMediaView.m in Sources */,
 				1961C1FA1A6DA2B800E8BF0B /* AppDelegate.m in Sources */,
 				1961C1F71A6DA2B800E8BF0B /* main.m in Sources */,
@@ -430,6 +424,7 @@
 				1961C2161A6DA2B800E8BF0B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1961C2171A6DA2B800E8BF0B /* Build configuration list for PBXNativeTarget "AYMediaViewDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -438,6 +433,7 @@
 				1961C2191A6DA2B800E8BF0B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

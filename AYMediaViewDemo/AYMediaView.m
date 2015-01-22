@@ -8,7 +8,6 @@
 
 #import "AYMediaView.h"
 #import "AVPlayerDemoPlaybackView.h"
-#import "NSString+NSHash.h"
 
 @interface AYMediaView()
 
@@ -57,9 +56,9 @@
     self.mPlaybackView.backgroundColor = [UIColor blackColor];
     [self addSubview:self.mPlaybackView];
     
-    self.playOrPauseButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 100, 100)];
+    self.playOrPauseButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 50, 50)];
     [self.playOrPauseButton addTarget:self action:@selector(playOrPauseMedia:) forControlEvents:UIControlEventTouchUpInside];
-    [self.playOrPauseButton setTitle:@"Play" forState:UIControlStateNormal];
+    [self.playOrPauseButton setImage:[UIImage imageNamed:@"16-play"] forState:UIControlStateNormal];
     [self.mPlaybackView addSubview:self.playOrPauseButton];
     
     //set up image view
@@ -73,7 +72,7 @@
     self.activityIndicator.frame = CGRectMake((self.frame.size.width - self.activityIndicator.frame.size.width)/2, (self.frame.size.height - self.activityIndicator.frame.size.height)/2, self.activityIndicator.frame.size.width, self.activityIndicator.frame.size.height);
     [self addSubview:self.activityIndicator];
     
-    //allowed extensios
+    //allowed extensions
     self.photoExtensionArray = [NSArray arrayWithObjects:@"jpg", @"JPG", @"jpeg", @"JPEG", @"png", @"PNG", nil];
     self.videoExtensionArray = [NSArray arrayWithObjects:@"mov", @"MOV", @"mp4", @"MP4", nil];
 }
@@ -84,7 +83,7 @@
     NSString *cachePath = [paths objectAtIndex:0];
     NSString *path = [url path];
     NSString *extension = [path pathExtension];
-    NSString *fileName = [path SHA1];
+    NSString *fileName = [self sha1:path];
     NSString *filePath = [NSString stringWithFormat:@"%@/%@.%@", cachePath, fileName, extension];
     
     if([[NSFileManager defaultManager]fileExistsAtPath:filePath])
@@ -188,24 +187,44 @@
 - (void)playerItemDidReachEnd:(NSNotification *)notification
 {
     NSLog(@"played item");
-    [self.playOrPauseButton setTitle:@"Play" forState:UIControlStateNormal];
+    [self.playOrPauseButton setImage:[UIImage imageNamed:@"16-play"] forState:UIControlStateNormal];
     [self.avPlayer seekToTime:kCMTimeZero];
 }
 
 - (IBAction)playOrPauseMedia:(id)sender
 {
-    UIButton *button = (UIButton*)sender;
-    
     if(self.avPlayer.rate>0)
     {
-        [button setTitle:@"Play" forState:UIControlStateNormal];
+        [self.playOrPauseButton setImage:[UIImage imageNamed:@"16-play"] forState:UIControlStateNormal];
         [self.avPlayer pause];
     }
     else
     {
-        [button setTitle:@"Pause" forState:UIControlStateNormal];
+        [self.playOrPauseButton setImage:[UIImage imageNamed:@"17-pause"] forState:UIControlStateNormal];
         [self.avPlayer play];
     }
+}
+
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [self playOrPauseMedia:nil];
+}
+
+-(NSString*) sha1:(NSString*)input
+{
+    const char *cstr = [input cStringUsingEncoding:NSUTF8StringEncoding];
+    NSData *data = [NSData dataWithBytes:cstr length:input.length];
+    
+    uint8_t digest[CC_SHA1_DIGEST_LENGTH];
+    
+    CC_SHA1(data.bytes, (CC_LONG)data.length, digest);
+    
+    NSMutableString* output = [NSMutableString stringWithCapacity:CC_SHA1_DIGEST_LENGTH * 2];
+    
+    for(int i = 0; i < CC_SHA1_DIGEST_LENGTH; i++)
+        [output appendFormat:@"%02x", digest[i]];
+    
+    return output;
 }
 
 @end
