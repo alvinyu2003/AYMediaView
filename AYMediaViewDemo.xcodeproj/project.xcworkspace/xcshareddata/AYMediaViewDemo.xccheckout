@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>52DA65AE-50FC-4881-B3E3-C191EAAC94CD</string>
+	<key>IDESourceControlProjectName</key>
+	<string>AYMediaViewDemo</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>663EACE00325D6FBF00EE4D049146619DD14EEEA</key>
+		<string>https://github.com/alvinyu2003/AYMediaView.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>AYMediaViewDemo.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>663EACE00325D6FBF00EE4D049146619DD14EEEA</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/alvinyu2003/AYMediaView.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>663EACE00325D6FBF00EE4D049146619DD14EEEA</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>663EACE00325D6FBF00EE4D049146619DD14EEEA</string>
+			<key>IDESourceControlWCCName</key>
+			<string>AYMediaViewDemo</string>
+		</dict>
+	</array>
+</dict>
+</plist>
