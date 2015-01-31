@@ -7,7 +7,6 @@
 //
 
 #import "AYMediaView.h"
-#import "AVPlayerDemoPlaybackView.h"
 
 @interface AYMediaView()
 
