@@ -56,16 +56,9 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        NSLog(@"init with frame: %@", NSStringFromCGRect(frame));
         [self setUpMediaView];
     }
     return self;
-}
-
-- (void)awakeFromNib
-{
-    NSLog(@"awake from nib with frame: %@", NSStringFromCGRect(self.frame));
-    [self setUpMediaView];
 }
 
 - (void)setUpMediaView
