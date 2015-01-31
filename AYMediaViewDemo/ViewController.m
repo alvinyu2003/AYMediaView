@@ -25,8 +25,8 @@
     AYMediaView *ayMediaView = [[AYMediaView alloc]initWithFrame:CGRectMake((self.view.frame.size.width-320)/2.0, (self.view.frame.size.height-320)/2.0, 320, 320)];
     [self.view addSubview:ayMediaView];
     
-    [ayMediaView setMediaWithURL:photoURL];
-    //[ayMediaView setMediaWithURL:videoURL];
+    //[ayMediaView setMediaWithURL:photoURL];
+    [ayMediaView setMediaWithURL:videoURL];
 }
 
 - (void)didReceiveMemoryWarning {
