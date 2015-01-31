@@ -11,7 +11,6 @@
 
 @interface AYMediaView()
 
-@property (nonatomic, strong) AVPlayerDemoPlaybackView *mPlaybackView;
 @property (nonatomic, strong) AVPlayer *avPlayer;
 @property (nonatomic, strong) UIImageView *imageView;
 @property (nonatomic, strong) IBOutlet UIButton *playOrPauseButton;
@@ -21,6 +20,29 @@
 @end
 
 @implementation AYMediaView
+
++ (Class)layerClass
+{
+    return [AVPlayerLayer class];
+}
+
+- (AVPlayer*)player
+{
+    return [(AVPlayerLayer*)[self layer] player];
+}
+
+- (void)setPlayer:(AVPlayer*)player
+{
+    [(AVPlayerLayer*)[self layer] setPlayer:player];
+}
+
+/* Specifies how the video is displayed within a player layer’s bounds.
+	(AVLayerVideoGravityResizeAspect is default) */
+- (void)setVideoFillMode:(NSString *)fillMode
+{
+    AVPlayerLayer *playerLayer = (AVPlayerLayer*)[self layer];
+    playerLayer.videoGravity = fillMode;
+}
 
 /*
 // Only override drawRect: if you perform custom drawing.
@@ -50,15 +72,10 @@
 {
     self.backgroundColor = [UIColor blackColor];
     
-    //set up video view
-    self.mPlaybackView = [[AVPlayerDemoPlaybackView alloc]initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
-    self.mPlaybackView.backgroundColor = [UIColor blackColor];
-    [self addSubview:self.mPlaybackView];
-    
     self.playOrPauseButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 50, 50)];
     [self.playOrPauseButton addTarget:self action:@selector(playOrPauseMedia:) forControlEvents:UIControlEventTouchUpInside];
     [self.playOrPauseButton setImage:[UIImage imageNamed:@"16-play"] forState:UIControlStateNormal];
-    [self.mPlaybackView addSubview:self.playOrPauseButton];
+    [self addSubview:self.playOrPauseButton];
     
     //set up image view
     self.imageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
@@ -145,9 +162,8 @@
     AVAsset *asset = [AVURLAsset URLAssetWithURL:[NSURL fileURLWithPath:filePath] options:nil];
     AVPlayerItem *item = [AVPlayerItem playerItemWithAsset:asset];
     self.avPlayer = [AVPlayer playerWithPlayerItem:item];
-    [self.mPlaybackView setPlayer:self.avPlayer];
+    [self setPlayer:self.avPlayer];
     self.imageView.hidden = YES;
-    self.mPlaybackView.hidden = NO;
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(playerItemDidReachEnd:) name:AVPlayerItemDidPlayToEndTimeNotification object:[self.avPlayer currentItem]];
 }
@@ -156,7 +172,6 @@
 {
     [self.imageView setImage:[UIImage imageWithContentsOfFile:filePath]];
     self.imageView.hidden = NO;
-    self.mPlaybackView.hidden = YES;
 }
 
 - (BOOL)isPhotoExtension:(NSString*)ext

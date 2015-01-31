@@ -15,7 +15,6 @@
 		1961C2051A6DA2B800E8BF0B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1961C2031A6DA2B800E8BF0B /* LaunchScreen.xib */; };
 		1961C2111A6DA2B800E8BF0B /* AYMediaViewDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1961C2101A6DA2B800E8BF0B /* AYMediaViewDemoTests.m */; };
 		1961C21F1A6DD2BE00E8BF0B /* AYMediaView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1961C21E1A6DD2BE00E8BF0B /* AYMediaView.m */; };
-		1961C2221A6DD6D100E8BF0B /* AVPlayerDemoPlaybackView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1961C2211A6DD6D100E8BF0B /* AVPlayerDemoPlaybackView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,8 +43,6 @@
 		1961C2101A6DA2B800E8BF0B /* AYMediaViewDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AYMediaViewDemoTests.m; sourceTree = "<group>"; };
 		1961C21D1A6DD2BE00E8BF0B /* AYMediaView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AYMediaView.h; sourceTree = "<group>"; };
 		1961C21E1A6DD2BE00E8BF0B /* AYMediaView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AYMediaView.m; sourceTree = "<group>"; };
-		1961C2201A6DD6D100E8BF0B /* AVPlayerDemoPlaybackView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVPlayerDemoPlaybackView.h; sourceTree = "<group>"; };
-		1961C2211A6DD6D100E8BF0B /* AVPlayerDemoPlaybackView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVPlayerDemoPlaybackView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,8 +90,6 @@
 				1961C1FC1A6DA2B800E8BF0B /* ViewController.m */,
 				1961C21D1A6DD2BE00E8BF0B /* AYMediaView.h */,
 				1961C21E1A6DD2BE00E8BF0B /* AYMediaView.m */,
-				1961C2201A6DD6D100E8BF0B /* AVPlayerDemoPlaybackView.h */,
-				1961C2211A6DD6D100E8BF0B /* AVPlayerDemoPlaybackView.m */,
 				1961C1FE1A6DA2B800E8BF0B /* Main.storyboard */,
 				1961C2011A6DA2B800E8BF0B /* Images.xcassets */,
 				1961C2031A6DA2B800E8BF0B /* LaunchScreen.xib */,
@@ -229,7 +224,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1961C2221A6DD6D100E8BF0B /* AVPlayerDemoPlaybackView.m in Sources */,
 				1961C1FD1A6DA2B800E8BF0B /* ViewController.m in Sources */,
 				1961C21F1A6DD2BE00E8BF0B /* AYMediaView.m in Sources */,
 				1961C1FA1A6DA2B800E8BF0B /* AppDelegate.m in Sources */,
