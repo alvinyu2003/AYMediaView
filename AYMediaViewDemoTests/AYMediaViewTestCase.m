@@ -1,19 +1,20 @@
 //
-//  AYMediaViewDemoTests.m
-//  AYMediaViewDemoTests
+//  AYMediaViewTestCase.m
+//  AYMediaViewDemo
 //
-//  Created by Alvin Yu on 1/19/15.
+//  Created by Alvin Yu on 2/10/15.
 //  Copyright (c) 2015 Alvin Yu. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
+#import "AYMediaView.h"
 
-@interface AYMediaViewDemoTests : XCTestCase
+@interface AYMediaViewTestCase : XCTestCase
 
 @end
 
-@implementation AYMediaViewDemoTests
+@implementation AYMediaViewTestCase
 
 - (void)setUp {
     [super setUp];
@@ -27,8 +28,7 @@
 
 - (void)testExample {
     // This is an example of a functional test case.
-    XCTAssert(YES, @"Pass");;
-    //XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
+    XCTAssert(YES, @"Pass");
 }
 
 - (void)testPerformanceExample {
